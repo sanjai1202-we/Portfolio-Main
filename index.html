@@ -1,11 +1,11 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Sanjai - UI/UX Designer Portfolio">
-    <title>Sanjai | Ai App Developer</title>
+    <title>Sanjai | UI/UX Designer</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -1218,6 +1218,50 @@
             border: 1px solid #f44336;
             color: #f44336;
         }
+
+        /* ===== PROJECT LINK BUTTONS ===== */
+        .work-links {
+            display: flex;
+            gap: 0.75rem;
+            margin-top: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .work-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            padding: 0.5rem 1.1rem;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            text-decoration: none;
+            transition: all var(--transition);
+        }
+
+        .demo-btn {
+            background: var(--white);
+            color: var(--black);
+        }
+
+        .demo-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(255, 255, 255, 0.25);
+        }
+
+        .github-btn {
+            background: transparent;
+            color: var(--silver);
+            border: 1px solid var(--medium-gray);
+        }
+
+        .github-btn:hover {
+            border-color: var(--white);
+            color: var(--white);
+            transform: translateY(-2px);
+        }
     </style>
 </head>
 
@@ -1264,7 +1308,7 @@
     <!-- Hero Section -->
     <section class="hero" id="home">
         <div class="hero-content">
-            <p class="hero-subtitle">UI/UX Designer • Creative Thinker</p>
+            <p class="hero-subtitle">UI/UX Designer â€¢ Creative Thinker</p>
             <h1 class="hero-title">Sanjai</h1>
             <p class="hero-description">
                 Dynamic and dedicated UI&UX designer with a positive attitude, honed through collaborative projects.
@@ -1292,7 +1336,7 @@
             </div>
             <div class="about-grid">
                 <div class="about-image">
-                    <img src="images/profile.jpg" alt="Sanjai"
+                    <img src="profile.jpg" alt="Sanjai"
                         onerror="this.src='https://via.placeholder.com/400x500/1a1a1a/ffffff?text=Sanjai'">
                 </div>
                 <div class="about-content">
@@ -1340,44 +1384,54 @@
             </div>
             <div class="skills-grid">
                 <div class="skill-card">
-                    <div class="skill-icon">�</div>
-                    <h4>Web Designing</h4>
-                    <p>Creating responsive, modern websites with HTML, CSS & JavaScript</p>
+                    <div class="skill-icon">&#x1F916;</div>
+                    <h4>AI App Development</h4>
+                    <p>Building intelligent applications using RAG, TensorFlow, and LLMs</p>
                 </div>
                 <div class="skill-card">
-                    <div class="skill-icon">📱</div>
-                    <h4>App Development</h4>
-                    <p>Building mobile and web applications with modern frameworks</p>
-                </div>
-                <div class="skill-card">
-                    <div class="skill-icon">🤖</div>
+                    <div class="skill-icon">&#x1F4AC;</div>
                     <h4>AI Prompting</h4>
-                    <p>Crafting effective prompts for AI models and chatbots</p>
+                    <p>Crafting effective prompts for AI models, agents, and chatbots</p>
                 </div>
                 <div class="skill-card">
-                    <div class="skill-icon">�</div>
-                    <h4>UI/UX Design</h4>
-                    <p>Creating intuitive and visually appealing user interfaces</p>
-                </div>
-                <div class="skill-card">
-                    <div class="skill-icon">�</div>
+                    <div class="skill-icon">&#x1F4CA;</div>
                     <h4>Data Analytics</h4>
-                    <p>Analyzing data to derive actionable insights</p>
+                    <p>Analyzing complex datasets to derive actionable business insights</p>
                 </div>
                 <div class="skill-card">
-                    <div class="skill-icon">🧠</div>
-                    <h4>Machine Learning</h4>
-                    <p>Building and training ML models for intelligent solutions</p>
+                    <div class="skill-icon">&#x1F4C8;</div>
+                    <h4>Power BI</h4>
+                    <p>Turning data into cohesive, visually immersive, and interactive insights</p>
                 </div>
                 <div class="skill-card">
-                    <div class="skill-icon">🎯</div>
+                    <div class="skill-icon">&#x1F5FA;&#xFE0F;</div>
+                    <h4>Tableau</h4>
+                    <p>Creating dynamic data visualization dashboards and reports</p>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon">&#x2699;&#xFE0F;</div>
+                    <h4>n8n Workflow</h4>
+                    <p>Automating complex technical processes and API integrations</p>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon">&#x1F4BC;</div>
                     <h4>Project Management</h4>
                     <p>Managing projects from concept to completion efficiently</p>
                 </div>
                 <div class="skill-card">
-                    <div class="skill-icon">💻</div>
-                    <h4>Computer Skills</h4>
-                    <p>Proficient in MS Office and digital tools</p>
+                    <div class="skill-icon">&#x1F3A8;</div>
+                    <h4>UI/UX Design</h4>
+                    <p>Creating intuitive, cinematic, and visually appealing user interfaces</p>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon">&#x1F4BB;</div>
+                    <h4>Next.js & React</h4>
+                    <p>Building highly performant, responsive modern web apps</p>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon">&#x1F30D;</div>
+                    <h4>WebXR / AR.js</h4>
+                    <p>Creating immersive Augmented Reality web experiences</p>
                 </div>
             </div>
         </div>
@@ -1393,38 +1447,38 @@
 
             <!-- Technical Certifications -->
             <div class="cert-category">
-                <h3 class="cert-category-title">📜 Technical Certifications</h3>
+                <h3 class="cert-category-title">ðŸ“œ Technical Certifications</h3>
                 <div class="cert-grid">
-                    <div class="cert-card" onclick="openCertModal('images/cert-data-analytics.png')">
-                        <img src="images/cert-data-analytics.png" alt="Data Analytics Certificate">
+                    <div class="cert-card" onclick="openCertModal('cert-data-analytics.png')">
+                        <img src="cert-data-analytics.png" alt="Data Analytics Certificate">
                         <h4>Data Analytics MasterClass</h4>
                         <p class="cert-issuer">NoviTech R&D Pvt. Ltd.</p>
                         <p class="cert-year">April - May 2025</p>
                         <span class="cert-badge">30 Days</span>
                     </div>
-                    <div class="cert-card" onclick="openCertModal('images/cert-ai-internship.png')">
-                        <img src="images/cert-ai-internship.png" alt="AI Internship Certificate">
+                    <div class="cert-card" onclick="openCertModal('cert-ai-internship.png')">
+                        <img src="cert-ai-internship.png" alt="AI Internship Certificate">
                         <h4>Artificial Intelligence Internship</h4>
                         <p class="cert-issuer">NoviTech R&D Pvt. Ltd.</p>
                         <p class="cert-year">April - May 2025</p>
                         <span class="cert-badge">1 Month</span>
                     </div>
-                    <div class="cert-card" onclick="openCertModal('images/cert-ml-internship.png')">
-                        <img src="images/cert-ml-internship.png" alt="Machine Learning Certificate">
+                    <div class="cert-card" onclick="openCertModal('cert-ml-internship.png')">
+                        <img src="cert-ml-internship.png" alt="Machine Learning Certificate">
                         <h4>Machine Learning Internship</h4>
                         <p class="cert-issuer">NoviTech R&D Pvt. Ltd.</p>
                         <p class="cert-year">April - May 2025</p>
                         <span class="cert-badge">1 Month</span>
                     </div>
-                    <div class="cert-card" onclick="openCertModal('images/cert-oracle-ai.png')">
-                        <img src="images/cert-oracle-ai.png" alt="Oracle AI Foundations Certificate">
+                    <div class="cert-card" onclick="openCertModal('cert-oracle-ai.png')">
+                        <img src="cert-oracle-ai.png" alt="Oracle AI Foundations Certificate">
                         <h4>Oracle Cloud AI Foundations Associate</h4>
                         <p class="cert-issuer">Oracle University</p>
                         <p class="cert-year">May 2025</p>
                         <span class="cert-badge">Certified</span>
                     </div>
-                    <div class="cert-card" onclick="openCertModal('images/cert-agrithon-hackathon.png')">
-                        <img src="images/cert-agrithon-hackathon.png" alt="Agrithon 2.0 Hackathon Certificate">
+                    <div class="cert-card" onclick="openCertModal('cert-agrithon-hackathon.png')">
+                        <img src="cert-agrithon-hackathon.png" alt="Agrithon 2.0 Hackathon Certificate">
                         <h4>Agrithon 2.0 - AI Hackathon</h4>
                         <p class="cert-issuer">VIT Vellore & DBT</p>
                         <p class="cert-year">August 2025</p>
@@ -1435,13 +1489,13 @@
 
             <!-- Hindi Language Certifications -->
             <div class="cert-category">
-                <h3 class="cert-category-title">📚 Hindi Language Proficiency</h3>
+                <h3 class="cert-category-title">ðŸ“š Hindi Language Proficiency</h3>
                 <div class="cert-grid">
                     <div class="cert-card hindi-collection" onclick="openHindiGallery()">
                         <div class="cert-stack">
-                            <img src="images/cert-hindi-praveen-degree.png" alt="Certificate Stack 3">
-                            <img src="images/cert-hindi-visharad-degree.png" alt="Certificate Stack 2">
-                            <img src="images/cert-hindi-parichaya.png" alt="Certificate Stack 1">
+                            <img src="cert-hindi-praveen-degree.png" alt="Certificate Stack 3">
+                            <img src="cert-hindi-visharad-degree.png" alt="Certificate Stack 2">
+                            <img src="cert-hindi-parichaya.png" alt="Certificate Stack 1">
                         </div>
                         <h4>Hindi Language Certificates</h4>
                         <p class="cert-issuer">Dakshina Bharat Hindi Prachar Sabha</p>
@@ -1461,68 +1515,136 @@
                 <h2 class="section-title">Featured Works</h2>
             </div>
             <div class="works-grid">
-                <!-- BMI Calculator -->
+
+                <!-- Project 1: Roadmap AR -->
                 <div class="work-card">
-                    <div class="work-image">
-                        <img src="images/bmi-calculator.png" alt="BMI Calculator">
+                    <div class="work-image"
+                        style="background: linear-gradient(135deg, #0d1b2a 0%, #1b2838 50%, #2a3f5f 100%); display:flex; align-items:center; justify-content:center; height:220px;">
+                        <div style="text-align:center; padding:2rem;">
+                            <div style="font-size:3.5rem; margin-bottom:0.5rem;">&#x1F5FA;&#xFE0F;</div>
+                            <div style="font-size:1.1rem; color:#e0e0e0; font-weight:600; letter-spacing:1px;">Roadmap
+                                AR</div>
+                        </div>
                     </div>
                     <div class="work-content">
-                        <p class="work-category">Web Application</p>
-                        <h3 class="work-title">BMI Calculator</h3>
+                        <p class="work-category">Augmented Reality</p>
+                        <h3 class="work-title">Roadmap AR</h3>
                         <p class="work-description">
-                            A modern BMI Calculator that calculates BMI and shows daily maintenance calories based on
-                            activity level.
-                            Features metric & imperial support, real-time results, and health status feedback.
+                            An Augmented Reality web application that overlays interactive roadmap visualizations onto
+                            real-world environments using the device camera for an immersive navigation experience.
                         </p>
                         <div class="work-tech">
-                            <span>HTML</span>
-                            <span>CSS</span>
+                            <span>AR.js</span>
                             <span>JavaScript</span>
+                            <span>WebXR</span>
+                            <span>HTML</span>
+                        </div>
+                        <div class="work-links">
+                            <a href="https://sanjai1202-we.github.io/Roadmap-Ar/" target="_blank"
+                                class="work-btn demo-btn">&#x25B6; Live Demo</a>
+                            <a href="https://github.com/sanjai1202-we/Roadmap-Ar" target="_blank"
+                                class="work-btn github-btn">&#x2B22; GitHub</a>
                         </div>
                     </div>
                 </div>
 
-                <!-- Indian Diet Planner AI -->
-                <a href="https://lnkd.in/g4GDK8fp" target="_blank" class="work-card">
-                    <div class="work-image">
-                        <img src="images/diet-planner.png" alt="Indian Diet Planner AI">
+                <!-- Project 2: Keyword Detector -->
+                <div class="work-card">
+                    <div class="work-image"
+                        style="background: linear-gradient(135deg, #1a0a2e 0%, #2d1b4e 50%, #4a2d7a 100%); display:flex; align-items:center; justify-content:center; height:220px;">
+                        <div style="text-align:center; padding:2rem;">
+                            <div style="font-size:3.5rem; margin-bottom:0.5rem;">&#x1F3A4;</div>
+                            <div style="font-size:1.1rem; color:#e0e0e0; font-weight:600; letter-spacing:1px;">Keyword
+                                Detector</div>
+                        </div>
                     </div>
                     <div class="work-content">
-                        <p class="work-category">AI / RAG Application</p>
-                        <h3 class="work-title">Indian Diet Planner AI</h3>
+                        <p class="work-category">AI / Speech Recognition</p>
+                        <h3 class="work-title">Keyword Detector</h3>
                         <p class="work-description">
-                            Uses Retrieval-Augmented Generation (RAG) to calculate personalized calorie targets,
-                            recommend Indian meals, and answer food-related questions via AI chatbot.
+                            A real-time voice keyword detection web app that listens through the microphone and
+                            identifies specific spoken keywords, enabling hands-free trigger-based interactions.
                         </p>
                         <div class="work-tech">
-                            <span>RAG</span>
+                            <span>JavaScript</span>
+                            <span>Web Speech API</span>
                             <span>AI</span>
-                            <span>JavaScript</span>
-                            <span>API</span>
-                        </div>
-                    </div>
-                </a>
-
-                <!-- CineMax -->
-                <div class="work-card">
-                    <div class="work-image">
-                        <img src="images/cinemax.png" alt="CineMax Movie Booking">
-                    </div>
-                    <div class="work-content">
-                        <p class="work-category">Full Stack Project</p>
-                        <h3 class="work-title">CineMax - Movie Ticket Booking</h3>
-                        <p class="work-description">
-                            A modern movie ticket booking platform with intuitive browsing, theater selection,
-                            interactive seat selection, and integrated CineBot chatbot for quick assistance.
-                        </p>
-                        <div class="work-tech">
                             <span>HTML</span>
-                            <span>CSS</span>
-                            <span>JavaScript</span>
-                            <span>UI/UX</span>
+                        </div>
+                        <div class="work-links">
+                            <a href="https://sanjai1202-we.github.io/Keyword-detecor/" target="_blank"
+                                class="work-btn demo-btn">&#x25B6; Live Demo</a>
+                            <a href="https://github.com/sanjai1202-we/Keyword-detecor" target="_blank"
+                                class="work-btn github-btn">&#x2B22; GitHub</a>
                         </div>
                     </div>
                 </div>
+
+                <!-- Project 3: BusAlert -->
+                <div class="work-card">
+                    <div class="work-image"
+                        style="background: linear-gradient(135deg, #0a2a1a 0%, #0d3b2e 50%, #1a5c3a 100%); display:flex; align-items:center; justify-content:center; height:220px;">
+                        <div style="text-align:center; padding:2rem;">
+                            <div style="font-size:3.5rem; margin-bottom:0.5rem;">&#x1F68C;</div>
+                            <div style="font-size:1.1rem; color:#e0e0e0; font-weight:600; letter-spacing:1px;">BusAlert
+                            </div>
+                        </div>
+                    </div>
+                    <div class="work-content">
+                        <p class="work-category">Full Stack / IoT</p>
+                        <h3 class="work-title">BusAlert &ndash; Live Bus Tracking</h3>
+                        <p class="work-description">
+                            A real-time GPS bus tracking system for students and drivers. Features live location
+                            sharing, missed-stop notifications, WhatsApp alerts to parents, and an admin dashboard for
+                            fleet management.
+                        </p>
+                        <div class="work-tech">
+                            <span>HTML</span>
+                            <span>JavaScript</span>
+                            <span>Firebase</span>
+                            <span>GPS API</span>
+                        </div>
+                        <div class="work-links">
+                            <a href="https://sanjai1202-we.github.io/Bus-Alert/" target="_blank"
+                                class="work-btn demo-btn">&#x25B6; Live Demo</a>
+                            <a href="https://github.com/sanjai1202-we/Bus-Alert" target="_blank"
+                                class="work-btn github-btn">&#x2B22; GitHub</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 4: PushUp Tracker -->
+                <div class="work-card">
+                    <div class="work-image"
+                        style="background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%); display:flex; align-items:center; justify-content:center; height:220px;">
+                        <div style="text-align:center; padding:2rem;">
+                            <div style="font-size:3.5rem; margin-bottom:0.5rem;">&#x1F3CB;&#xFE0F;</div>
+                            <div style="font-size:1.1rem; color:#e0e0e0; font-weight:600; letter-spacing:1px;">PushForm
+                                AI</div>
+                        </div>
+                    </div>
+                    <div class="work-content">
+                        <p class="work-category">AI / Fitness Tech</p>
+                        <h3 class="work-title">PushForm AI Tracker</h3>
+                        <p class="work-description">
+                            An AI-powered push-up form analyzer using real-time pose detection via webcam. Tracks reps,
+                            analyzes form quality, provides live coaching feedback, and saves workout session history.
+                        </p>
+                        <div class="work-tech">
+                            <span>JavaScript</span>
+                            <span>TensorFlow.js</span>
+                            <span>MediaPipe</span>
+                            <span>AI</span>
+                        </div>
+                        <div class="work-links">
+                            <a href="https://sanjai1202-we.github.io/PushupTracker/" target="_blank"
+                                class="work-btn demo-btn">&#x25B6; Live Demo</a>
+                            <a href="https://github.com/sanjai1202-we/PushupTracker" target="_blank"
+                                class="work-btn github-btn">&#x2B22; GitHub</a>
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </div>
     </section>
@@ -1563,7 +1685,10 @@
 
                 <!-- Contact Form -->
                 <div class="contact-form-container">
-                    <form id="contactForm" class="contact-form">
+                    <form id="contactForm" class="contact-form" action="https://formsubmit.co/sanjai.rg2006@gmail.com"
+                        method="POST">
+                        <input type="hidden" name="_captcha" value="false">
+                        <input type="hidden" name="_subject" value="New message from Portfolio!">
                         <div class="form-group">
                             <label for="userName">Your Name</label>
                             <input type="text" id="userName" name="user_name" placeholder="Enter your name" required>
@@ -1609,7 +1734,7 @@
 
     <div class="chatbot-window" id="chatbotWindow">
         <div class="chatbot-header">
-            <div class="chatbot-avatar">🤖</div>
+            <div class="chatbot-avatar">ðŸ¤–</div>
             <div class="chatbot-info">
                 <h4>Sanjai's Assistant</h4>
                 <p>Ask me about services, skills & projects</p>
@@ -1617,7 +1742,7 @@
         </div>
         <div class="chatbot-messages" id="chatMessages">
             <div class="chat-message bot">
-                Hello! 👋 I'm Sanjai's portfolio assistant. How can I help you today? Ask me about skills, services,
+                Hello! ðŸ‘‹ I'm Sanjai's portfolio assistant. How can I help you today? Ask me about skills, services,
                 projects, or how to get in touch!
             </div>
         </div>
@@ -1673,15 +1798,15 @@
 
         // Hindi Certificates Gallery Data
         const hindiCerts = [
-            { src: 'images/cert-hindi-parichaya.png', title: 'Parichaya Examination - First Class (July 2013)' },
-            { src: 'images/cert-hindi-prathamic.png', title: 'Prathamic Examination - First Class (Feb 2014)' },
-            { src: 'images/cert-hindi-madhyama.png', title: 'Madhyama Examination - Second Class (Aug 2014)' },
-            { src: 'images/cert-hindi-rashtrabhasha.png', title: 'Rashtrabhasha Examination - Second Class (Feb 2016)' },
-            { src: 'images/cert-hindi-praveshika.png', title: 'Praveshika Examination - Second Class (Feb 2017)' },
-            { src: 'images/cert-hindi-visharad.png', title: 'Visharad Poorvardh - Pass (Aug 2017)' },
-            { src: 'images/cert-hindi-visharad-degree.png', title: 'Visharad Degree - Third Class (2018)' },
-            { src: 'images/cert-hindi-praveen-poorvardh.png', title: 'Praveen Poorvardh - Pass (Feb 2019)' },
-            { src: 'images/cert-hindi-praveen-degree.png', title: 'Praveen Degree - Third Class (2019)' }
+            { src: 'cert-hindi-parichaya.png', title: 'Parichaya Examination - First Class (July 2013)' },
+            { src: 'cert-hindi-prathamic.png', title: 'Prathamic Examination - First Class (Feb 2014)' },
+            { src: 'cert-hindi-madhyama.png', title: 'Madhyama Examination - Second Class (Aug 2014)' },
+            { src: 'cert-hindi-rashtrabhasha.png', title: 'Rashtrabhasha Examination - Second Class (Feb 2016)' },
+            { src: 'cert-hindi-praveshika.png', title: 'Praveshika Examination - Second Class (Feb 2017)' },
+            { src: 'cert-hindi-visharad-degree.png', title: 'Visharad Poorvardh - Pass (Aug 2017)' },
+            { src: 'cert-hindi-visharad-degree.png', title: 'Visharad Degree - Third Class (2018)' },
+            { src: 'cert-hindi-praveen-poorvardh.png', title: 'Praveen Poorvardh - Pass (Feb 2019)' },
+            { src: 'cert-hindi-praveen-degree.png', title: 'Praveen Degree - Third Class (2019)' }
         ];
 
         let currentCertIndex = 0;
@@ -1824,9 +1949,9 @@
                 "Project Coordination & Management"
             ],
             projects: [
-                { name: "BMI Calculator", desc: "A modern BMI Calculator that calculates BMI and shows daily maintenance calories based on activity level. Features metric & imperial support, real-time results, and health status feedback.", tech: "HTML, CSS, JavaScript" },
-                { name: "Indian Diet Planner AI", desc: "Uses Retrieval-Augmented Generation (RAG) to calculate personalized calorie targets, recommend Indian meals, and answer food-related questions via AI chatbot.", tech: "RAG, AI, JavaScript, API" },
-                { name: "CineMax - Movie Ticket Booking", desc: "A modern movie ticket booking platform with intuitive browsing, theater selection, interactive seat selection, and integrated CineBot chatbot.", tech: "HTML, CSS, JavaScript, UI/UX" }
+                { name: "PushForm AI Tracker", desc: "An AI-powered push-up form analyzer using real-time pose detection via webcam. Tracks reps, analyzes form, provides live coaching feedback and saves session history.", tech: "JavaScript, TensorFlow.js, MediaPipe, AI" },
+                { name: "BusAlert â€“ Live Bus Tracking", desc: "A real-time GPS bus tracking system for students and drivers. Enables live location sharing, missed-stop notifications, WhatsApp alerts, and an admin dashboard.", tech: "HTML, JavaScript, Firebase, GPS" },
+                { name: "South Indian Wedding Invitation", desc: "A cinematic, scroll-driven 3D wedding invitation website with GSAP animations, Dravidian-inspired aesthetics, parallax depth effects, and a full immersive temple camera journey.", tech: "HTML, CSS, GSAP, 3D Animation" }
             ],
             certifications: [
                 "Data Analytics MasterClass - NoviTech R&D (30 Days)",
@@ -1844,75 +1969,75 @@
 
             // Greetings
             if (msg.match(/^(hi|hello|hey|hii|hiii|greetings)/)) {
-                return `Hello! 👋 I'm Sanjai's portfolio assistant. How can I help you? You can ask about:\n• Services I offer\n• My skills & expertise\n• Projects I've worked on\n• How to contact me`;
+                return `Hello! ðŸ‘‹ I'm Sanjai's portfolio assistant. How can I help you? You can ask about:\nâ€¢ Services I offer\nâ€¢ My skills & expertise\nâ€¢ Projects I've worked on\nâ€¢ How to contact me`;
             }
 
             // Services
             if (msg.includes('service') || msg.includes('offer') || msg.includes('provide') || msg.includes('what do you do')) {
-                return `Here are the services Sanjai offers:\n\n${portfolioData.services.map(s => `✓ ${s}`).join('\n')}\n\nWould you like to know more about any specific service?`;
+                return `Here are the services Sanjai offers:\n\n${portfolioData.services.map(s => `âœ“ ${s}`).join('\n')}\n\nWould you like to know more about any specific service?`;
             }
 
             // Skills
             if (msg.includes('skill') || msg.includes('expertise') || msg.includes('good at') || msg.includes('abilities')) {
-                return `Sanjai's key skills include:\n\n${portfolioData.skills.map(s => `🔹 ${s}`).join('\n\n')}\n\nInterested in any particular skill?`;
+                return `Sanjai's key skills include:\n\n${portfolioData.skills.map(s => `ðŸ”¹ ${s}`).join('\n\n')}\n\nInterested in any particular skill?`;
             }
 
             // Projects
             if (msg.includes('project') || msg.includes('work') || msg.includes('portfolio') || msg.includes('built') || msg.includes('created')) {
                 let response = "Here are some featured projects:\n\n";
                 portfolioData.projects.forEach((p, i) => {
-                    response += `📌 **${p.name}**\n${p.desc}\n🛠️ Tech: ${p.tech}\n\n`;
+                    response += `ðŸ“Œ **${p.name}**\n${p.desc}\nðŸ› ï¸ Tech: ${p.tech}\n\n`;
                 });
                 return response + "Would you like more details about any project?";
             }
 
             // Contact
             if (msg.includes('contact') || msg.includes('reach') || msg.includes('email') || msg.includes('phone') || msg.includes('connect') || msg.includes('hire')) {
-                return `You can reach Sanjai through:\n\n📧 Email: ${portfolioData.email}\n📱 Phone: ${portfolioData.phone}\n📍 Location: ${portfolioData.location}\n\n💡 You can also use the contact form below to send a message directly!`;
+                return `You can reach Sanjai through:\n\nðŸ“§ Email: ${portfolioData.email}\nðŸ“± Phone: ${portfolioData.phone}\nðŸ“ Location: ${portfolioData.location}\n\nðŸ’¡ You can also use the contact form below to send a message directly!`;
             }
 
             // Education
             if (msg.includes('education') || msg.includes('study') || msg.includes('college') || msg.includes('degree') || msg.includes('qualification')) {
-                return `🎓 Education:\n${portfolioData.education}\n\nSanjai is currently pursuing B.Tech in Information Technology with a focus on UI/UX design and innovative tech solutions.`;
+                return `ðŸŽ“ Education:\n${portfolioData.education}\n\nSanjai is currently pursuing B.Tech in Information Technology with a focus on UI/UX design and innovative tech solutions.`;
             }
 
             // Certifications
             if (msg.includes('certificate') || msg.includes('certification') || msg.includes('achievement')) {
-                return `🏆 Certifications:\n\n${portfolioData.certifications.map(c => `📜 ${c}`).join('\n')}\n\nThese certifications demonstrate expertise in AI, ML, Data Analytics, and more!`;
+                return `ðŸ† Certifications:\n\n${portfolioData.certifications.map(c => `ðŸ“œ ${c}`).join('\n')}\n\nThese certifications demonstrate expertise in AI, ML, Data Analytics, and more!`;
             }
 
             // About
             if (msg.includes('about') || msg.includes('who') || msg.includes('tell me about')) {
-                return `👋 About Sanjai:\n\nSanjai is a dynamic UI/UX Designer and B.Tech IT student with a passion for creating intuitive digital experiences. With expertise in web development, AI prompting, data analytics, and machine learning, Sanjai combines technical skills with creative design thinking.\n\nLocation: ${portfolioData.location}\nEducation: ${portfolioData.education}`;
+                return `ðŸ‘‹ About Sanjai:\n\nSanjai is a dynamic UI/UX Designer and B.Tech IT student with a passion for creating intuitive digital experiences. With expertise in web development, AI prompting, data analytics, and machine learning, Sanjai combines technical skills with creative design thinking.\n\nLocation: ${portfolioData.location}\nEducation: ${portfolioData.education}`;
             }
 
             // Web design / UI UX specific
             if (msg.includes('web') || msg.includes('website') || msg.includes('ui') || msg.includes('ux') || msg.includes('design')) {
-                return `🎨 UI/UX Design Services:\n\nSanjai specializes in creating beautiful, user-friendly interfaces. Services include:\n\n• Modern responsive website design\n• Mobile app UI/UX design\n• User research & prototyping\n• Interactive user interfaces\n\nFeatured UI/UX project: CineMax - A movie ticket booking platform with intuitive design.`;
+                return `ðŸŽ¨ UI/UX Design Services:\n\nSanjai specializes in creating beautiful, user-friendly interfaces. Services include:\n\nâ€¢ Modern responsive website design\nâ€¢ Mobile app UI/UX design\nâ€¢ User research & prototyping\nâ€¢ Interactive user interfaces\n\nFeatured UI/UX project: CineMax - A movie ticket booking platform with intuitive design.`;
             }
 
             // AI / ML specific
             if (msg.includes('ai') || msg.includes('artificial intelligence') || msg.includes('machine learning') || msg.includes('ml')) {
-                return `🤖 AI & Machine Learning:\n\nSanjai has expertise in:\n• AI Prompting & Chatbot development\n• Machine Learning model building\n• RAG (Retrieval-Augmented Generation)\n\nFeatured AI project: Indian Diet Planner AI - Uses RAG to recommend personalized Indian meals.`;
+                return `ðŸ¤– AI & Machine Learning:\n\nSanjai has expertise in:\nâ€¢ AI Prompting & Chatbot development\nâ€¢ Machine Learning model building\nâ€¢ RAG (Retrieval-Augmented Generation)\n\nFeatured AI project: Indian Diet Planner AI - Uses RAG to recommend personalized Indian meals.`;
             }
 
             // Pricing / cost
             if (msg.includes('price') || msg.includes('cost') || msg.includes('rate') || msg.includes('charge') || msg.includes('fee')) {
-                return `💬 For pricing and project discussions, please reach out directly:\n\n📧 Email: ${portfolioData.email}\n📱 Phone: ${portfolioData.phone}\n\nOr use the contact form on this page to send your requirements!`;
+                return `ðŸ’¬ For pricing and project discussions, please reach out directly:\n\nðŸ“§ Email: ${portfolioData.email}\nðŸ“± Phone: ${portfolioData.phone}\n\nOr use the contact form on this page to send your requirements!`;
             }
 
             // Thanks
             if (msg.includes('thank') || msg.includes('thanks')) {
-                return "You're welcome! 😊 Is there anything else you'd like to know about Sanjai's services or projects?";
+                return "You're welcome! ðŸ˜Š Is there anything else you'd like to know about Sanjai's services or projects?";
             }
 
             // Bye
             if (msg.includes('bye') || msg.includes('goodbye')) {
-                return "Goodbye! 👋 Feel free to reach out anytime. Have a great day!";
+                return "Goodbye! ðŸ‘‹ Feel free to reach out anytime. Have a great day!";
             }
 
             // Default response for unrelated questions
-            return `I can only help with questions about Sanjai's portfolio. Here's what I can assist with:\n\n• Services offered\n• Skills & expertise\n• Projects & work samples\n• Education & certifications\n• Contact information\n\nWhat would you like to know?`;
+            return `I can only help with questions about Sanjai's portfolio. Here's what I can assist with:\n\nâ€¢ Services offered\nâ€¢ Skills & expertise\nâ€¢ Projects & work samples\nâ€¢ Education & certifications\nâ€¢ Contact information\n\nWhat would you like to know?`;
         }
 
         // Add message to chat
@@ -1951,64 +2076,6 @@
             chatInput.value = question;
             sendMessage();
         }
-
-        // ===== CONTACT FORM WITH EMAILJS =====
-        // EmailJS Configuration - Replace with your actual credentials
-        const EMAILJS_PUBLIC_KEY = 'YOUR_PUBLIC_KEY'; // Get from EmailJS dashboard
-        const EMAILJS_SERVICE_ID = 'YOUR_SERVICE_ID'; // Get from EmailJS dashboard
-        const EMAILJS_TEMPLATE_ID = 'YOUR_TEMPLATE_ID'; // Get from EmailJS dashboard
-
-        const contactForm = document.getElementById('contactForm');
-        const submitBtn = document.getElementById('submitBtn');
-        const formStatus = document.getElementById('formStatus');
-
-        contactForm.addEventListener('submit', async (e) => {
-            e.preventDefault();
-
-            const name = document.getElementById('userName').value.trim();
-            const email = document.getElementById('userEmail').value.trim();
-            const message = document.getElementById('userMessage').value.trim();
-
-            if (!name || !email || !message) {
-                showFormStatus('Please fill in all fields.', 'error');
-                return;
-            }
-
-            submitBtn.disabled = true;
-            submitBtn.textContent = 'Sending...';
-
-            // Check if EmailJS is configured
-            if (EMAILJS_PUBLIC_KEY === 'YOUR_PUBLIC_KEY') {
-                // Fallback: Open email client with pre-filled content
-                const mailtoLink = `mailto:sanjai.rg2006@gmail.com?subject=Portfolio Contact from ${encodeURIComponent(name)}&body=${encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`)}`;
-                window.location.href = mailtoLink;
-
-                showFormStatus('Opening your email client... If it doesn\'t open, please email directly to sanjai.rg2006@gmail.com', 'success');
-                submitBtn.disabled = false;
-                submitBtn.textContent = 'Send Message';
-                contactForm.reset();
-                return;
-            }
-
-            try {
-                // EmailJS send (when configured)
-                await emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, {
-                    from_name: name,
-                    from_email: email,
-                    message: message,
-                    to_email: 'sanjai.rg2006@gmail.com'
-                });
-
-                showFormStatus('Message sent successfully! I\'ll get back to you soon.', 'success');
-                contactForm.reset();
-            } catch (error) {
-                showFormStatus('Failed to send message. Please try emailing directly.', 'error');
-                console.error('EmailJS Error:', error);
-            }
-
-            submitBtn.disabled = false;
-            submitBtn.textContent = 'Send Message';
-        });
 
         function showFormStatus(message, type) {
             formStatus.textContent = message;
