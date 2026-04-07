@@ -1,0 +1,2024 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Sanjai - UI/UX Designer Portfolio">
+    <title>Sanjai | UI/UX Designer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+    <style>
+        /* ===== BLACK & WHITE THEME ===== */
+        :root {
+            --black: #0a0a0a;
+            --dark-gray: #1a1a1a;
+            --medium-gray: #333333;
+            --light-gray: #666666;
+            --silver: #999999;
+            --off-white: #f5f5f5;
+            --white: #ffffff;
+            --accent: #ffffff;
+            --font-display: 'Playfair Display', serif;
+            --font-body: 'Inter', sans-serif;
+            --transition: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-body);
+            background: var(--black);
+            color: var(--white);
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+
+        ::selection {
+            background: var(--white);
+            color: var(--black);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* ===== FLOATING SOCIAL BUTTONS ===== */
+        .floating-buttons {
+            position: fixed;
+            right: 2rem;
+            top: 50%;
+            transform: translateY(-50%);
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            z-index: 1000;
+        }
+
+        .float-btn {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: var(--white);
+            border: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all var(--transition);
+            box-shadow: 0 4px 20px rgba(255, 255, 255, 0.1);
+            text-decoration: none;
+        }
+
+        .float-btn svg {
+            width: 24px;
+            height: 24px;
+            fill: var(--black);
+            transition: all var(--transition);
+        }
+
+        .float-btn:hover {
+            transform: scale(1.15) rotate(5deg);
+            box-shadow: 0 8px 30px rgba(255, 255, 255, 0.2);
+        }
+
+        .float-btn:hover svg {
+            transform: scale(1.1);
+        }
+
+        .float-btn.linkedin:hover {
+            background: #0077b5;
+        }
+
+        .float-btn.linkedin:hover svg {
+            fill: white;
+        }
+
+        .float-btn.github:hover {
+            background: #333;
+        }
+
+        .float-btn.github:hover svg {
+            fill: white;
+        }
+
+        .float-btn.website:hover {
+            background: #00d4ff;
+        }
+
+        .float-btn.website:hover svg {
+            fill: white;
+        }
+
+        /* ===== NAVIGATION ===== */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            padding: 1.5rem 0;
+            z-index: 100;
+            background: transparent;
+            transition: all var(--transition);
+        }
+
+        .navbar.scrolled {
+            background: rgba(10, 10, 10, 0.95);
+            backdrop-filter: blur(20px);
+            padding: 1rem 0;
+        }
+
+        .navbar .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: var(--font-display);
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--white);
+            text-decoration: none;
+            letter-spacing: 2px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2.5rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--silver);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            transition: color var(--transition);
+            position: relative;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 1px;
+            background: var(--white);
+            transition: width var(--transition);
+        }
+
+        .nav-links a:hover {
+            color: var(--white);
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        /* ===== HERO SECTION ===== */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 30% 50%, rgba(50, 50, 50, 0.3) 0%, transparent 50%);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-subtitle {
+            font-size: 0.9rem;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            color: var(--silver);
+            margin-bottom: 1.5rem;
+            animation: fadeInUp 1s ease;
+        }
+
+        .hero-title {
+            font-family: var(--font-display);
+            font-size: clamp(3rem, 10vw, 7rem);
+            font-weight: 700;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+            animation: fadeInUp 1s ease 0.2s both;
+        }
+
+        .hero-description {
+            font-size: 1.1rem;
+            color: var(--silver);
+            max-width: 600px;
+            margin: 0 auto 2.5rem;
+            animation: fadeInUp 1s ease 0.4s both;
+        }
+
+        .hero-cta {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 1rem 2.5rem;
+            background: var(--white);
+            color: var(--black);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            border-radius: 50px;
+            transition: all var(--transition);
+            animation: fadeInUp 1s ease 0.6s both;
+        }
+
+        .hero-cta:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 40px rgba(255, 255, 255, 0.2);
+        }
+
+        .scroll-indicator {
+            position: absolute;
+            bottom: 3rem;
+            left: 50%;
+            transform: translateX(-50%);
+            animation: bounce 2s infinite;
+        }
+
+        .scroll-indicator span {
+            display: block;
+            width: 2px;
+            height: 40px;
+            background: linear-gradient(to bottom, var(--white), transparent);
+            margin: 0 auto;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes bounce {
+
+            0%,
+            100% {
+                transform: translateX(-50%) translateY(0);
+            }
+
+            50% {
+                transform: translateX(-50%) translateY(10px);
+            }
+        }
+
+        /* ===== SECTIONS ===== */
+        section {
+            padding: 6rem 0;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-label {
+            font-size: 0.8rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--silver);
+            margin-bottom: 1rem;
+        }
+
+        .section-title {
+            font-family: var(--font-display);
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            font-weight: 600;
+        }
+
+        /* ===== ABOUT SECTION ===== */
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .about-image {
+            position: relative;
+        }
+
+        .about-image img {
+            width: 100%;
+            border-radius: 8px;
+            filter: grayscale(100%);
+            transition: filter var(--transition);
+        }
+
+        .about-image:hover img {
+            filter: grayscale(0%);
+        }
+
+        .about-image::before {
+            content: '';
+            position: absolute;
+            top: -20px;
+            left: -20px;
+            right: 20px;
+            bottom: 20px;
+            border: 1px solid var(--medium-gray);
+            border-radius: 8px;
+            z-index: -1;
+        }
+
+        .about-content h3 {
+            font-family: var(--font-display);
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .about-content p {
+            color: var(--silver);
+            margin-bottom: 1.5rem;
+        }
+
+        .about-details {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .detail-item {
+            border-left: 2px solid var(--medium-gray);
+            padding-left: 1rem;
+        }
+
+        .detail-label {
+            font-size: 0.8rem;
+            color: var(--silver);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .detail-value {
+            font-weight: 500;
+            margin-top: 0.25rem;
+        }
+
+        /* ===== SKILLS SECTION ===== */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .skill-card {
+            background: var(--dark-gray);
+            border: 1px solid var(--medium-gray);
+            border-radius: 12px;
+            padding: 2rem;
+            text-align: center;
+            transition: all var(--transition);
+        }
+
+        .skill-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--white);
+        }
+
+        .skill-icon {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: var(--medium-gray);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            font-size: 1.5rem;
+        }
+
+        .skill-card h4 {
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .skill-card p {
+            font-size: 0.9rem;
+            color: var(--silver);
+        }
+
+        /* ===== PROJECTS/WORKS SECTION ===== */
+        .works-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .work-card {
+            position: relative;
+            border-radius: 12px;
+            overflow: hidden;
+            background: var(--dark-gray);
+            border: 1px solid var(--medium-gray);
+            transition: all var(--transition);
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .work-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--white);
+        }
+
+        .work-image {
+            width: 100%;
+            height: 220px;
+            overflow: hidden;
+        }
+
+        .work-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: grayscale(60%);
+            transition: all var(--transition);
+        }
+
+        .work-card:hover img {
+            filter: grayscale(0%);
+            transform: scale(1.05);
+        }
+
+        .work-content {
+            padding: 1.5rem;
+        }
+
+        .work-category {
+            font-size: 0.75rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--silver);
+            margin-bottom: 0.5rem;
+        }
+
+        .work-title {
+            font-family: var(--font-display);
+            font-size: 1.4rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .work-description {
+            font-size: 0.9rem;
+            color: var(--silver);
+            margin-bottom: 1rem;
+            line-height: 1.6;
+        }
+
+        .work-tech {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .work-tech span {
+            padding: 0.25rem 0.75rem;
+            background: var(--medium-gray);
+            border-radius: 50px;
+            font-size: 0.75rem;
+            color: var(--silver);
+        }
+
+        /* ===== EDUCATION SECTION ===== */
+        .education-card {
+            background: var(--dark-gray);
+            border: 1px solid var(--medium-gray);
+            border-radius: 12px;
+            padding: 2.5rem;
+            max-width: 700px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .education-degree {
+            font-family: var(--font-display);
+            font-size: 1.75rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .education-school {
+            color: var(--silver);
+            margin-bottom: 1rem;
+        }
+
+        .education-year {
+            display: inline-block;
+            padding: 0.5rem 1.5rem;
+            background: var(--medium-gray);
+            border-radius: 50px;
+            font-size: 0.85rem;
+        }
+
+        /* ===== CONTACT SECTION ===== */
+        .contact-content {
+            text-align: center;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .contact-title {
+            font-family: var(--font-display);
+            font-size: clamp(2rem, 5vw, 4rem);
+            margin-bottom: 1.5rem;
+        }
+
+        .contact-email {
+            font-size: 1.25rem;
+            color: var(--white);
+            text-decoration: none;
+            border-bottom: 2px solid var(--medium-gray);
+            padding-bottom: 0.25rem;
+            transition: all var(--transition);
+        }
+
+        .contact-email:hover {
+            border-color: var(--white);
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            margin-top: 3rem;
+            flex-wrap: wrap;
+        }
+
+        .contact-item {
+            text-align: center;
+        }
+
+        .contact-item .label {
+            font-size: 0.8rem;
+            color: var(--silver);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 0.5rem;
+        }
+
+        /* ===== CERTIFICATES SECTION ===== */
+        .cert-category {
+            margin-bottom: 3rem;
+        }
+
+        .cert-category-title {
+            font-family: var(--font-display);
+            font-size: 1.5rem;
+            text-align: center;
+            margin-bottom: 2rem;
+            color: var(--silver);
+        }
+
+        .cert-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .cert-card {
+            background: var(--dark-gray);
+            border: 1px solid var(--medium-gray);
+            border-radius: 12px;
+            padding: 1.5rem;
+            text-align: center;
+            transition: all var(--transition);
+            cursor: pointer;
+        }
+
+        .cert-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--white);
+        }
+
+        .cert-card img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+            filter: grayscale(30%);
+            transition: filter var(--transition);
+        }
+
+        .cert-card:hover img {
+            filter: grayscale(0%);
+        }
+
+        .cert-card h4 {
+            font-size: 1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .cert-card .cert-issuer {
+            font-size: 0.8rem;
+            color: var(--silver);
+            margin-bottom: 0.25rem;
+        }
+
+        .cert-card .cert-year {
+            font-size: 0.75rem;
+            color: var(--light-gray);
+        }
+
+        .cert-card .cert-badge {
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            background: var(--medium-gray);
+            border-radius: 50px;
+            font-size: 0.7rem;
+            margin-top: 0.5rem;
+            color: var(--silver);
+        }
+
+        /* Certificate Modal */
+        .cert-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.95);
+            z-index: 2000;
+            justify-content: center;
+            align-items: center;
+            padding: 2rem;
+        }
+
+        .cert-modal.active {
+            display: flex;
+        }
+
+        .cert-modal img {
+            max-width: 90%;
+            max-height: 90vh;
+            border-radius: 8px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+        }
+
+        .cert-modal-close {
+            position: absolute;
+            top: 2rem;
+            right: 2rem;
+            width: 50px;
+            height: 50px;
+            background: var(--white);
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all var(--transition);
+        }
+
+        .cert-modal-close:hover {
+            transform: scale(1.1);
+        }
+
+        /* Gallery Navigation */
+        .cert-modal-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 50px;
+            height: 50px;
+            background: var(--white);
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all var(--transition);
+            z-index: 10;
+        }
+
+        .cert-modal-nav:hover {
+            transform: translateY(-50%) scale(1.1);
+        }
+
+        .cert-modal-prev {
+            left: 2rem;
+        }
+
+        .cert-modal-next {
+            right: 2rem;
+        }
+
+        .cert-modal-counter {
+            position: absolute;
+            bottom: 2rem;
+            left: 50%;
+            transform: translateX(-50%);
+            color: var(--white);
+            font-size: 1rem;
+            background: rgba(0, 0, 0, 0.5);
+            padding: 0.5rem 1.5rem;
+            border-radius: 50px;
+        }
+
+        .cert-modal-title {
+            position: absolute;
+            top: 2rem;
+            left: 50%;
+            transform: translateX(-50%);
+            color: var(--white);
+            font-family: var(--font-display);
+            font-size: 1.25rem;
+            background: rgba(0, 0, 0, 0.5);
+            padding: 0.75rem 2rem;
+            border-radius: 8px;
+            white-space: nowrap;
+        }
+
+        /* Hindi Certificates Card Special Style */
+        .cert-card.hindi-collection {
+            background: linear-gradient(135deg, var(--dark-gray) 0%, var(--medium-gray) 100%);
+            border: 2px solid var(--silver);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cert-card.hindi-collection::before {
+            content: '9 Certificates';
+            position: absolute;
+            top: 10px;
+            right: -30px;
+            background: var(--white);
+            color: var(--black);
+            padding: 0.25rem 2rem;
+            font-size: 0.7rem;
+            font-weight: 600;
+            transform: rotate(45deg);
+        }
+
+        .cert-card.hindi-collection .cert-stack {
+            position: relative;
+            height: 150px;
+            margin-bottom: 1rem;
+        }
+
+        .cert-card.hindi-collection .cert-stack img {
+            position: absolute;
+            width: 80%;
+            height: 120px;
+            object-fit: cover;
+            border-radius: 6px;
+            left: 50%;
+            transform: translateX(-50%);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .cert-card.hindi-collection .cert-stack img:nth-child(1) {
+            top: 0;
+            z-index: 3;
+        }
+
+        .cert-card.hindi-collection .cert-stack img:nth-child(2) {
+            top: 10px;
+            z-index: 2;
+            opacity: 0.7;
+            transform: translateX(-50%) scale(0.95);
+        }
+
+        .cert-card.hindi-collection .cert-stack img:nth-child(3) {
+            top: 20px;
+            z-index: 1;
+            opacity: 0.4;
+            transform: translateX(-50%) scale(0.9);
+        }
+
+        /* ===== FOOTER ===== */
+        footer {
+            padding: 2rem 0;
+            border-top: 1px solid var(--medium-gray);
+            text-align: center;
+        }
+
+        footer p {
+            color: var(--silver);
+            font-size: 0.85rem;
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 768px) {
+            .floating-buttons {
+                right: 1rem;
+                top: auto;
+                bottom: 5rem;
+                transform: none;
+                flex-direction: row;
+            }
+
+            .float-btn {
+                width: 44px;
+                height: 44px;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .about-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .about-image {
+                max-width: 300px;
+                margin: 0 auto;
+            }
+
+            .works-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-info {
+                flex-direction: column;
+                gap: 1.5rem;
+            }
+
+            .chatbot-window {
+                width: calc(100% - 2rem);
+                height: 70vh;
+                right: 1rem;
+                bottom: 5rem;
+            }
+        }
+
+        /* ===== CHATBOT STYLES ===== */
+        .chatbot-toggle {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--white) 0%, var(--silver) 100%);
+            border: none;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 8px 32px rgba(255, 255, 255, 0.2);
+            transition: all var(--transition);
+            z-index: 1001;
+        }
+
+        .chatbot-toggle:hover {
+            transform: scale(1.1);
+            box-shadow: 0 12px 40px rgba(255, 255, 255, 0.3);
+        }
+
+        .chatbot-toggle svg {
+            width: 28px;
+            height: 28px;
+            fill: var(--black);
+            transition: all var(--transition);
+        }
+
+        .chatbot-toggle.active svg.chat-icon {
+            display: none;
+        }
+
+        .chatbot-toggle svg.close-icon {
+            display: none;
+        }
+
+        .chatbot-toggle.active svg.close-icon {
+            display: block;
+        }
+
+        .chatbot-window {
+            position: fixed;
+            bottom: 6rem;
+            right: 2rem;
+            width: 380px;
+            height: 500px;
+            background: var(--dark-gray);
+            border: 1px solid var(--medium-gray);
+            border-radius: 16px;
+            display: none;
+            flex-direction: column;
+            z-index: 1000;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+            overflow: hidden;
+        }
+
+        .chatbot-window.active {
+            display: flex;
+            animation: slideUp 0.3s ease;
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .chatbot-header {
+            padding: 1.25rem;
+            background: var(--medium-gray);
+            border-bottom: 1px solid var(--light-gray);
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .chatbot-avatar {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: var(--white);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.25rem;
+        }
+
+        .chatbot-info h4 {
+            font-size: 1rem;
+            margin-bottom: 0.15rem;
+        }
+
+        .chatbot-info p {
+            font-size: 0.75rem;
+            color: var(--silver);
+        }
+
+        .chatbot-messages {
+            flex: 1;
+            padding: 1rem;
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+
+        .chatbot-messages::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        .chatbot-messages::-webkit-scrollbar-track {
+            background: var(--dark-gray);
+        }
+
+        .chatbot-messages::-webkit-scrollbar-thumb {
+            background: var(--medium-gray);
+            border-radius: 3px;
+        }
+
+        .chat-message {
+            max-width: 85%;
+            padding: 0.75rem 1rem;
+            border-radius: 12px;
+            font-size: 0.9rem;
+            line-height: 1.5;
+        }
+
+        .chat-message.bot {
+            background: var(--medium-gray);
+            align-self: flex-start;
+            border-bottom-left-radius: 4px;
+        }
+
+        .chat-message.user {
+            background: var(--white);
+            color: var(--black);
+            align-self: flex-end;
+            border-bottom-right-radius: 4px;
+        }
+
+        .chat-suggestions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            padding: 0 1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .chat-suggestion {
+            padding: 0.5rem 0.75rem;
+            background: var(--medium-gray);
+            border: 1px solid var(--light-gray);
+            border-radius: 20px;
+            font-size: 0.8rem;
+            color: var(--silver);
+            cursor: pointer;
+            transition: all var(--transition);
+        }
+
+        .chat-suggestion:hover {
+            background: var(--light-gray);
+            color: var(--white);
+            border-color: var(--white);
+        }
+
+        .chatbot-input {
+            padding: 1rem;
+            border-top: 1px solid var(--medium-gray);
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        .chatbot-input input {
+            flex: 1;
+            padding: 0.75rem 1rem;
+            background: var(--medium-gray);
+            border: 1px solid var(--light-gray);
+            border-radius: 25px;
+            color: var(--white);
+            font-size: 0.9rem;
+            outline: none;
+            transition: all var(--transition);
+        }
+
+        .chatbot-input input::placeholder {
+            color: var(--silver);
+        }
+
+        .chatbot-input input:focus {
+            border-color: var(--white);
+        }
+
+        .chatbot-input button {
+            width: 42px;
+            height: 42px;
+            border-radius: 50%;
+            background: var(--white);
+            border: none;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all var(--transition);
+        }
+
+        .chatbot-input button:hover {
+            transform: scale(1.05);
+        }
+
+        .chatbot-input button svg {
+            width: 18px;
+            height: 18px;
+            fill: var(--black);
+        }
+
+        /* ===== CONTACT FORM STYLES ===== */
+        .contact-form-container {
+            margin-top: 3rem;
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .form-group label {
+            font-size: 0.85rem;
+            color: var(--silver);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            padding: 1rem;
+            background: var(--dark-gray);
+            border: 1px solid var(--medium-gray);
+            border-radius: 8px;
+            color: var(--white);
+            font-size: 1rem;
+            font-family: var(--font-body);
+            outline: none;
+            transition: all var(--transition);
+        }
+
+        .form-group input::placeholder,
+        .form-group textarea::placeholder {
+            color: var(--light-gray);
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            border-color: var(--white);
+        }
+
+        .form-group textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+
+        .submit-btn {
+            padding: 1rem 2rem;
+            background: var(--white);
+            color: var(--black);
+            border: none;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            cursor: pointer;
+            transition: all var(--transition);
+            margin-top: 0.5rem;
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 40px rgba(255, 255, 255, 0.2);
+        }
+
+        .submit-btn:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .form-status {
+            padding: 1rem;
+            border-radius: 8px;
+            text-align: center;
+            display: none;
+        }
+
+        .form-status.success {
+            display: block;
+            background: rgba(76, 175, 80, 0.2);
+            border: 1px solid #4caf50;
+            color: #4caf50;
+        }
+
+        .form-status.error {
+            display: block;
+            background: rgba(244, 67, 54, 0.2);
+            border: 1px solid #f44336;
+            color: #f44336;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Floating Social Buttons -->
+    <div class="floating-buttons">
+        <a href="https://www.linkedin.com/in/sanjai-ramesh-704a4235a" target="_blank" class="float-btn linkedin"
+            title="LinkedIn">
+            <svg viewBox="0 0 24 24">
+                <path
+                    d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+            </svg>
+        </a>
+        <a href="https://github.com/sanjai1202-we" target="_blank" class="float-btn github" title="GitHub">
+            <svg viewBox="0 0 24 24">
+                <path
+                    d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+            </svg>
+        </a>
+        <a href="https://sanjairg2006.wixsite.com/magi-amman-mess" target="_blank" class="float-btn website"
+            title="Website">
+            <svg viewBox="0 0 24 24">
+                <path
+                    d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm1 16.057v-3.057h2.994c-.059 1.143-.212 2.24-.456 3.279-.823-.12-1.674-.188-2.538-.222zm1.957 2.162c-.499 1.33-1.159 2.497-1.957 3.456v-3.62c.666.028 1.319.081 1.957.164zm-1.957-7.219v-3.015c.868-.034 1.721-.103 2.548-.224.238 1.027.389 2.111.446 3.239h-2.994zm0-5.014v-3.661c.806.969 1.471 2.15 1.971 3.496-.642.084-1.3.137-1.971.165zm2.703-3.267c1.237.496 2.354 1.228 3.29 2.146-.642.234-1.311.442-2.019.607-.344-.992-.775-1.91-1.271-2.753zm-7.241 13.56c-.244-1.039-.398-2.136-.456-3.279h2.994v3.057c-.865.034-1.714.102-2.538.222zm2.538 1.776v3.62c-.798-.959-1.458-2.126-1.957-3.456.638-.083 1.291-.136 1.957-.164zm-2.994-7.055c.057-1.128.207-2.212.446-3.239.827.121 1.68.19 2.548.224v3.015h-2.994zm1.024-5.179c.5-1.346 1.165-2.527 1.97-3.496v3.661c-.671-.028-1.329-.081-1.97-.165zm-2.005-.35c-.708-.165-1.377-.373-2.018-.607.937-.918 2.053-1.65 3.29-2.146-.496.844-.927 1.762-1.272 2.753zm-.549 1.918c-.264 1.151-.434 2.36-.492 3.611h-3.933c.165-1.658.739-3.197 1.617-4.518.88.361 1.816.67 2.808.907zm.009 9.262c-.988.236-1.92.542-2.797.9-.89-1.328-1.471-2.879-1.637-4.551h3.934c.058 1.265.231 2.488.5 3.651zm.553 1.917c.342.976.768 1.881 1.257 2.712-1.223-.49-2.326-1.211-3.256-2.115.636-.229 1.299-.435 1.999-.597zm9.924 0c.7.163 1.362.367 1.999.597-.931.903-2.034 1.625-3.257 2.116.489-.832.915-1.737 1.258-2.713zm.553-1.917c.27-1.163.442-2.386.501-3.651h3.934c-.167 1.672-.748 3.223-1.638 4.551-.877-.358-1.81-.664-2.797-.9zm.501-5.651c-.058-1.251-.229-2.46-.492-3.611.992-.237 1.929-.546 2.809-.907.877 1.321 1.451 2.86 1.616 4.518h-3.933z" />
+            </svg>
+        </a>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="container">
+            <a href="#" class="logo">SANJAI</a>
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#certificates">Certificates</a></li>
+                <li><a href="#works">Works</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <p class="hero-subtitle">UI/UX Designer • Creative Thinker</p>
+            <h1 class="hero-title">Sanjai</h1>
+            <p class="hero-description">
+                Dynamic and dedicated UI&UX designer with a positive attitude, honed through collaborative projects.
+                A fast learner with strong computer skills, committed to fostering relationships and achieving
+                professional goals.
+            </p>
+            <a href="#works" class="hero-cta">
+                View My Work
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M5 12h14M12 5l7 7-7 7" />
+                </svg>
+            </a>
+        </div>
+        <div class="scroll-indicator">
+            <span></span>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <div class="container">
+            <div class="section-header">
+                <p class="section-label">Get to know me</p>
+                <h2 class="section-title">About Me</h2>
+            </div>
+            <div class="about-grid">
+                <div class="about-image">
+                    <img src="images/profile.jpg" alt="Sanjai"
+                        onerror="this.src='https://via.placeholder.com/400x500/1a1a1a/ffffff?text=Sanjai'">
+                </div>
+                <div class="about-content">
+                    <h3>Hello, I'm Sanjai</h3>
+                    <p>
+                        I'm a B.Tech Information Technology student at Annai Mira College of Engineering and Technology,
+                        Ranipet.
+                        With a passion for UI/UX design and a proven ability in project coordination and event planning,
+                        I enhance student engagement through innovative multimedia presentations.
+                    </p>
+                    <p>
+                        I thrive in collaborative environments and have developed strong relationships with peers and
+                        mentors
+                        through consistent communication and dedication to achieving professional goals.
+                    </p>
+                    <div class="about-details">
+                        <div class="detail-item">
+                            <p class="detail-label">Location</p>
+                            <p class="detail-value">Vellore, India 632104</p>
+                        </div>
+                        <div class="detail-item">
+                            <p class="detail-label">Education</p>
+                            <p class="detail-value">B.Tech IT (2023-2027)</p>
+                        </div>
+                        <div class="detail-item">
+                            <p class="detail-label">Email</p>
+                            <p class="detail-value">sanjai.rg2006@gmail.com</p>
+                        </div>
+                        <div class="detail-item">
+                            <p class="detail-label">Phone</p>
+                            <p class="detail-value">+91 6385411206</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" style="background: var(--dark-gray);">
+        <div class="container">
+            <div class="section-header">
+                <p class="section-label">What I do</p>
+                <h2 class="section-title">My Skills</h2>
+            </div>
+            <div class="skills-grid">
+                <div class="skill-card">
+                    <div class="skill-icon">�</div>
+                    <h4>Web Designing</h4>
+                    <p>Creating responsive, modern websites with HTML, CSS & JavaScript</p>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon">📱</div>
+                    <h4>App Development</h4>
+                    <p>Building mobile and web applications with modern frameworks</p>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon">🤖</div>
+                    <h4>AI Prompting</h4>
+                    <p>Crafting effective prompts for AI models and chatbots</p>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon">�</div>
+                    <h4>UI/UX Design</h4>
+                    <p>Creating intuitive and visually appealing user interfaces</p>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon">�</div>
+                    <h4>Data Analytics</h4>
+                    <p>Analyzing data to derive actionable insights</p>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon">🧠</div>
+                    <h4>Machine Learning</h4>
+                    <p>Building and training ML models for intelligent solutions</p>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon">🎯</div>
+                    <h4>Project Management</h4>
+                    <p>Managing projects from concept to completion efficiently</p>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon">💻</div>
+                    <h4>Computer Skills</h4>
+                    <p>Proficient in MS Office and digital tools</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certificates Section -->
+    <section id="certificates">
+        <div class="container">
+            <div class="section-header">
+                <p class="section-label">My Achievements</p>
+                <h2 class="section-title">Certifications</h2>
+            </div>
+
+            <!-- Technical Certifications -->
+            <div class="cert-category">
+                <h3 class="cert-category-title">📜 Technical Certifications</h3>
+                <div class="cert-grid">
+                    <div class="cert-card" onclick="openCertModal('images/cert-data-analytics.png')">
+                        <img src="images/cert-data-analytics.png" alt="Data Analytics Certificate">
+                        <h4>Data Analytics MasterClass</h4>
+                        <p class="cert-issuer">NoviTech R&D Pvt. Ltd.</p>
+                        <p class="cert-year">April - May 2025</p>
+                        <span class="cert-badge">30 Days</span>
+                    </div>
+                    <div class="cert-card" onclick="openCertModal('images/cert-ai-internship.png')">
+                        <img src="images/cert-ai-internship.png" alt="AI Internship Certificate">
+                        <h4>Artificial Intelligence Internship</h4>
+                        <p class="cert-issuer">NoviTech R&D Pvt. Ltd.</p>
+                        <p class="cert-year">April - May 2025</p>
+                        <span class="cert-badge">1 Month</span>
+                    </div>
+                    <div class="cert-card" onclick="openCertModal('images/cert-ml-internship.png')">
+                        <img src="images/cert-ml-internship.png" alt="Machine Learning Certificate">
+                        <h4>Machine Learning Internship</h4>
+                        <p class="cert-issuer">NoviTech R&D Pvt. Ltd.</p>
+                        <p class="cert-year">April - May 2025</p>
+                        <span class="cert-badge">1 Month</span>
+                    </div>
+                    <div class="cert-card" onclick="openCertModal('images/cert-oracle-ai.png')">
+                        <img src="images/cert-oracle-ai.png" alt="Oracle AI Foundations Certificate">
+                        <h4>Oracle Cloud AI Foundations Associate</h4>
+                        <p class="cert-issuer">Oracle University</p>
+                        <p class="cert-year">May 2025</p>
+                        <span class="cert-badge">Certified</span>
+                    </div>
+                    <div class="cert-card" onclick="openCertModal('images/cert-agrithon-hackathon.png')">
+                        <img src="images/cert-agrithon-hackathon.png" alt="Agrithon 2.0 Hackathon Certificate">
+                        <h4>Agrithon 2.0 - AI Hackathon</h4>
+                        <p class="cert-issuer">VIT Vellore & DBT</p>
+                        <p class="cert-year">August 2025</p>
+                        <span class="cert-badge">48-Hour Hackathon</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Hindi Language Certifications -->
+            <div class="cert-category">
+                <h3 class="cert-category-title">📚 Hindi Language Proficiency</h3>
+                <div class="cert-grid">
+                    <div class="cert-card hindi-collection" onclick="openHindiGallery()">
+                        <div class="cert-stack">
+                            <img src="images/cert-hindi-praveen-degree.png" alt="Certificate Stack 3">
+                            <img src="images/cert-hindi-visharad-degree.png" alt="Certificate Stack 2">
+                            <img src="images/cert-hindi-parichaya.png" alt="Certificate Stack 1">
+                        </div>
+                        <h4>Hindi Language Certificates</h4>
+                        <p class="cert-issuer">Dakshina Bharat Hindi Prachar Sabha</p>
+                        <p class="cert-year">2013 - 2019</p>
+                        <span class="cert-badge">Click to View All</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Works/Projects Section -->
+    <section id="works">
+        <div class="container">
+            <div class="section-header">
+                <p class="section-label">My Portfolio</p>
+                <h2 class="section-title">Featured Works</h2>
+            </div>
+            <div class="works-grid">
+                <!-- BMI Calculator -->
+                <div class="work-card">
+                    <div class="work-image">
+                        <img src="images/bmi-calculator.png" alt="BMI Calculator">
+                    </div>
+                    <div class="work-content">
+                        <p class="work-category">Web Application</p>
+                        <h3 class="work-title">BMI Calculator</h3>
+                        <p class="work-description">
+                            A modern BMI Calculator that calculates BMI and shows daily maintenance calories based on
+                            activity level.
+                            Features metric & imperial support, real-time results, and health status feedback.
+                        </p>
+                        <div class="work-tech">
+                            <span>HTML</span>
+                            <span>CSS</span>
+                            <span>JavaScript</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Indian Diet Planner AI -->
+                <a href="https://lnkd.in/g4GDK8fp" target="_blank" class="work-card">
+                    <div class="work-image">
+                        <img src="images/diet-planner.png" alt="Indian Diet Planner AI">
+                    </div>
+                    <div class="work-content">
+                        <p class="work-category">AI / RAG Application</p>
+                        <h3 class="work-title">Indian Diet Planner AI</h3>
+                        <p class="work-description">
+                            Uses Retrieval-Augmented Generation (RAG) to calculate personalized calorie targets,
+                            recommend Indian meals, and answer food-related questions via AI chatbot.
+                        </p>
+                        <div class="work-tech">
+                            <span>RAG</span>
+                            <span>AI</span>
+                            <span>JavaScript</span>
+                            <span>API</span>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- CineMax -->
+                <div class="work-card">
+                    <div class="work-image">
+                        <img src="images/cinemax.png" alt="CineMax Movie Booking">
+                    </div>
+                    <div class="work-content">
+                        <p class="work-category">Full Stack Project</p>
+                        <h3 class="work-title">CineMax - Movie Ticket Booking</h3>
+                        <p class="work-description">
+                            A modern movie ticket booking platform with intuitive browsing, theater selection,
+                            interactive seat selection, and integrated CineBot chatbot for quick assistance.
+                        </p>
+                        <div class="work-tech">
+                            <span>HTML</span>
+                            <span>CSS</span>
+                            <span>JavaScript</span>
+                            <span>UI/UX</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education" style="background: var(--dark-gray);">
+        <div class="container">
+            <div class="section-header">
+                <p class="section-label">Academic Background</p>
+                <h2 class="section-title">Education</h2>
+            </div>
+            <div class="education-card">
+                <h3 class="education-degree">Bachelor of Technology</h3>
+                <p class="education-school">Information Technology<br>Annai Mira College of Engineering And Technology,
+                    Ranipet</p>
+                <span class="education-year">2023 - 2027</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <div class="container">
+            <div class="contact-content">
+                <p class="section-label">Get in touch</p>
+                <h2 class="contact-title">Let's Work Together</h2>
+                <a href="mailto:sanjai.rg2006@gmail.com" class="contact-email">sanjai.rg2006@gmail.com</a>
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <p class="label">Phone</p>
+                        <p>+91 6385411206</p>
+                    </div>
+                    <div class="contact-item">
+                        <p class="label">Location</p>
+                        <p>Vellore, India</p>
+                    </div>
+                </div>
+
+                <!-- Contact Form -->
+                <div class="contact-form-container">
+                    <form id="contactForm" class="contact-form">
+                        <div class="form-group">
+                            <label for="userName">Your Name</label>
+                            <input type="text" id="userName" name="user_name" placeholder="Enter your name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="userEmail">Your Email</label>
+                            <input type="email" id="userEmail" name="user_email" placeholder="Enter your email"
+                                required>
+                        </div>
+                        <div class="form-group">
+                            <label for="userMessage">Your Message</label>
+                            <textarea id="userMessage" name="message"
+                                placeholder="Tell me about your project or just say hello..." required></textarea>
+                        </div>
+                        <button type="submit" class="submit-btn" id="submitBtn">Send Message</button>
+                        <div id="formStatus" class="form-status"></div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Sanjai. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Chatbot Widget -->
+    <button class="chatbot-toggle" id="chatbotToggle" title="Chat with me">
+        <svg class="chat-icon" viewBox="0 0 24 24">
+            <path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm0 14H6l-2 2V4h16v12z" />
+            <circle cx="8" cy="10" r="1.5" />
+            <circle cx="12" cy="10" r="1.5" />
+            <circle cx="16" cy="10" r="1.5" />
+        </svg>
+        <svg class="close-icon" viewBox="0 0 24 24">
+            <path
+                d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z" />
+        </svg>
+    </button>
+
+    <div class="chatbot-window" id="chatbotWindow">
+        <div class="chatbot-header">
+            <div class="chatbot-avatar">🤖</div>
+            <div class="chatbot-info">
+                <h4>Sanjai's Assistant</h4>
+                <p>Ask me about services, skills & projects</p>
+            </div>
+        </div>
+        <div class="chatbot-messages" id="chatMessages">
+            <div class="chat-message bot">
+                Hello! 👋 I'm Sanjai's portfolio assistant. How can I help you today? Ask me about skills, services,
+                projects, or how to get in touch!
+            </div>
+        </div>
+        <div class="chat-suggestions" id="chatSuggestions">
+            <button class="chat-suggestion" onclick="askSuggestion('What services do you offer?')">Services</button>
+            <button class="chat-suggestion" onclick="askSuggestion('Tell me about your projects')">Projects</button>
+            <button class="chat-suggestion" onclick="askSuggestion('What are your skills?')">Skills</button>
+            <button class="chat-suggestion" onclick="askSuggestion('How can I contact you?')">Contact</button>
+        </div>
+        <div class="chatbot-input">
+            <input type="text" id="chatInput" placeholder="Type your message..." onkeypress="handleChatKeypress(event)">
+            <button onclick="sendMessage()">
+                <svg viewBox="0 0 24 24">
+                    <path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z" />
+                </svg>
+            </button>
+        </div>
+    </div>
+
+    <!-- Certificate Modal -->
+    <div class="cert-modal" id="certModal">
+        <button class="cert-modal-close" onclick="closeCertModal()">&times;</button>
+        <div class="cert-modal-title" id="certModalTitle" style="display: none;"></div>
+        <button class="cert-modal-nav cert-modal-prev" id="certPrev" onclick="prevCert()"
+            style="display: none;">&#10094;</button>
+        <img id="certModalImg" src="" alt="Certificate">
+        <button class="cert-modal-nav cert-modal-next" id="certNext" onclick="nextCert()"
+            style="display: none;">&#10095;</button>
+        <div class="cert-modal-counter" id="certCounter" style="display: none;"></div>
+    </div>
+
+    <script>
+        // Navbar scroll effect
+        window.addEventListener('scroll', () => {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+
+        // Hindi Certificates Gallery Data
+        const hindiCerts = [
+            { src: 'images/cert-hindi-parichaya.png', title: 'Parichaya Examination - First Class (July 2013)' },
+            { src: 'images/cert-hindi-prathamic.png', title: 'Prathamic Examination - First Class (Feb 2014)' },
+            { src: 'images/cert-hindi-madhyama.png', title: 'Madhyama Examination - Second Class (Aug 2014)' },
+            { src: 'images/cert-hindi-rashtrabhasha.png', title: 'Rashtrabhasha Examination - Second Class (Feb 2016)' },
+            { src: 'images/cert-hindi-praveshika.png', title: 'Praveshika Examination - Second Class (Feb 2017)' },
+            { src: 'images/cert-hindi-visharad.png', title: 'Visharad Poorvardh - Pass (Aug 2017)' },
+            { src: 'images/cert-hindi-visharad-degree.png', title: 'Visharad Degree - Third Class (2018)' },
+            { src: 'images/cert-hindi-praveen-poorvardh.png', title: 'Praveen Poorvardh - Pass (Feb 2019)' },
+            { src: 'images/cert-hindi-praveen-degree.png', title: 'Praveen Degree - Third Class (2019)' }
+        ];
+
+        let currentCertIndex = 0;
+        let isGalleryMode = false;
+
+        // Open single certificate modal
+        function openCertModal(imageSrc) {
+            const modal = document.getElementById('certModal');
+            const modalImg = document.getElementById('certModalImg');
+            isGalleryMode = false;
+
+            // Hide gallery elements
+            document.getElementById('certPrev').style.display = 'none';
+            document.getElementById('certNext').style.display = 'none';
+            document.getElementById('certCounter').style.display = 'none';
+            document.getElementById('certModalTitle').style.display = 'none';
+
+            modalImg.src = imageSrc;
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        // Open Hindi Gallery
+        function openHindiGallery() {
+            isGalleryMode = true;
+            currentCertIndex = 0;
+
+            const modal = document.getElementById('certModal');
+
+            // Show gallery elements
+            document.getElementById('certPrev').style.display = 'flex';
+            document.getElementById('certNext').style.display = 'flex';
+            document.getElementById('certCounter').style.display = 'block';
+            document.getElementById('certModalTitle').style.display = 'block';
+
+            updateGalleryDisplay();
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        // Update gallery display
+        function updateGalleryDisplay() {
+            const modalImg = document.getElementById('certModalImg');
+            const counter = document.getElementById('certCounter');
+            const title = document.getElementById('certModalTitle');
+
+            modalImg.src = hindiCerts[currentCertIndex].src;
+            counter.textContent = `${currentCertIndex + 1} / ${hindiCerts.length}`;
+            title.textContent = hindiCerts[currentCertIndex].title;
+        }
+
+        // Navigate to previous certificate
+        function prevCert() {
+            if (currentCertIndex > 0) {
+                currentCertIndex--;
+            } else {
+                currentCertIndex = hindiCerts.length - 1;
+            }
+            updateGalleryDisplay();
+        }
+
+        // Navigate to next certificate
+        function nextCert() {
+            if (currentCertIndex < hindiCerts.length - 1) {
+                currentCertIndex++;
+            } else {
+                currentCertIndex = 0;
+            }
+            updateGalleryDisplay();
+        }
+
+        // Close modal
+        function closeCertModal() {
+            const modal = document.getElementById('certModal');
+            modal.classList.remove('active');
+            document.body.style.overflow = '';
+            isGalleryMode = false;
+        }
+
+        // Keyboard navigation
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                closeCertModal();
+            }
+            if (isGalleryMode) {
+                if (e.key === 'ArrowLeft') {
+                    prevCert();
+                } else if (e.key === 'ArrowRight') {
+                    nextCert();
+                }
+            }
+        });
+
+        // Close modal on click outside image
+        document.getElementById('certModal').addEventListener('click', (e) => {
+            if (e.target.id === 'certModal') {
+                closeCertModal();
+            }
+        });
+
+        // ===== CHATBOT FUNCTIONALITY =====
+        const chatbotToggle = document.getElementById('chatbotToggle');
+        const chatbotWindow = document.getElementById('chatbotWindow');
+        const chatMessages = document.getElementById('chatMessages');
+        const chatInput = document.getElementById('chatInput');
+
+        // Toggle chatbot window
+        chatbotToggle.addEventListener('click', () => {
+            chatbotToggle.classList.toggle('active');
+            chatbotWindow.classList.toggle('active');
+            if (chatbotWindow.classList.contains('active')) {
+                chatInput.focus();
+            }
+        });
+
+        // Portfolio knowledge base
+        const portfolioData = {
+            name: "Sanjai",
+            title: "UI/UX Designer",
+            email: "sanjai.rg2006@gmail.com",
+            phone: "+91 6385411206",
+            location: "Vellore, India 632104",
+            education: "B.Tech Information Technology from Annai Mira College of Engineering and Technology, Ranipet (2023-2027)",
+            skills: [
+                "Web Designing - Creating responsive, modern websites with HTML, CSS & JavaScript",
+                "App Development - Building mobile and web applications with modern frameworks",
+                "AI Prompting - Crafting effective prompts for AI models and chatbots",
+                "UI/UX Design - Creating intuitive and visually appealing user interfaces",
+                "Data Analytics - Analyzing data to derive actionable insights",
+                "Machine Learning - Building and training ML models for intelligent solutions",
+                "Project Management - Managing projects from concept to completion efficiently",
+                "Computer Skills - Proficient in MS Office and digital tools"
+            ],
+            services: [
+                "Website Design & Development",
+                "Mobile & Web Application Development",
+                "UI/UX Design & Prototyping",
+                "AI & Machine Learning Solutions",
+                "Data Analytics & Visualization",
+                "Project Coordination & Management"
+            ],
+            projects: [
+                { name: "BMI Calculator", desc: "A modern BMI Calculator that calculates BMI and shows daily maintenance calories based on activity level. Features metric & imperial support, real-time results, and health status feedback.", tech: "HTML, CSS, JavaScript" },
+                { name: "Indian Diet Planner AI", desc: "Uses Retrieval-Augmented Generation (RAG) to calculate personalized calorie targets, recommend Indian meals, and answer food-related questions via AI chatbot.", tech: "RAG, AI, JavaScript, API" },
+                { name: "CineMax - Movie Ticket Booking", desc: "A modern movie ticket booking platform with intuitive browsing, theater selection, interactive seat selection, and integrated CineBot chatbot.", tech: "HTML, CSS, JavaScript, UI/UX" }
+            ],
+            certifications: [
+                "Data Analytics MasterClass - NoviTech R&D (30 Days)",
+                "Artificial Intelligence Internship - NoviTech R&D (1 Month)",
+                "Machine Learning Internship - NoviTech R&D (1 Month)",
+                "Oracle Cloud AI Foundations Associate - Oracle University",
+                "Agrithon 2.0 - AI Hackathon - VIT Vellore & DBT",
+                "Hindi Language Certifications - Dakshina Bharat Hindi Prachar Sabha (9 Certificates)"
+            ]
+        };
+
+        // Chatbot response generator
+        function getBotResponse(message) {
+            const msg = message.toLowerCase();
+
+            // Greetings
+            if (msg.match(/^(hi|hello|hey|hii|hiii|greetings)/)) {
+                return `Hello! 👋 I'm Sanjai's portfolio assistant. How can I help you? You can ask about:\n• Services I offer\n• My skills & expertise\n• Projects I've worked on\n• How to contact me`;
+            }
+
+            // Services
+            if (msg.includes('service') || msg.includes('offer') || msg.includes('provide') || msg.includes('what do you do')) {
+                return `Here are the services Sanjai offers:\n\n${portfolioData.services.map(s => `✓ ${s}`).join('\n')}\n\nWould you like to know more about any specific service?`;
+            }
+
+            // Skills
+            if (msg.includes('skill') || msg.includes('expertise') || msg.includes('good at') || msg.includes('abilities')) {
+                return `Sanjai's key skills include:\n\n${portfolioData.skills.map(s => `🔹 ${s}`).join('\n\n')}\n\nInterested in any particular skill?`;
+            }
+
+            // Projects
+            if (msg.includes('project') || msg.includes('work') || msg.includes('portfolio') || msg.includes('built') || msg.includes('created')) {
+                let response = "Here are some featured projects:\n\n";
+                portfolioData.projects.forEach((p, i) => {
+                    response += `📌 **${p.name}**\n${p.desc}\n🛠️ Tech: ${p.tech}\n\n`;
+                });
+                return response + "Would you like more details about any project?";
+            }
+
+            // Contact
+            if (msg.includes('contact') || msg.includes('reach') || msg.includes('email') || msg.includes('phone') || msg.includes('connect') || msg.includes('hire')) {
+                return `You can reach Sanjai through:\n\n📧 Email: ${portfolioData.email}\n📱 Phone: ${portfolioData.phone}\n📍 Location: ${portfolioData.location}\n\n💡 You can also use the contact form below to send a message directly!`;
+            }
+
+            // Education
+            if (msg.includes('education') || msg.includes('study') || msg.includes('college') || msg.includes('degree') || msg.includes('qualification')) {
+                return `🎓 Education:\n${portfolioData.education}\n\nSanjai is currently pursuing B.Tech in Information Technology with a focus on UI/UX design and innovative tech solutions.`;
+            }
+
+            // Certifications
+            if (msg.includes('certificate') || msg.includes('certification') || msg.includes('achievement')) {
+                return `🏆 Certifications:\n\n${portfolioData.certifications.map(c => `📜 ${c}`).join('\n')}\n\nThese certifications demonstrate expertise in AI, ML, Data Analytics, and more!`;
+            }
+
+            // About
+            if (msg.includes('about') || msg.includes('who') || msg.includes('tell me about')) {
+                return `👋 About Sanjai:\n\nSanjai is a dynamic UI/UX Designer and B.Tech IT student with a passion for creating intuitive digital experiences. With expertise in web development, AI prompting, data analytics, and machine learning, Sanjai combines technical skills with creative design thinking.\n\nLocation: ${portfolioData.location}\nEducation: ${portfolioData.education}`;
+            }
+
+            // Web design / UI UX specific
+            if (msg.includes('web') || msg.includes('website') || msg.includes('ui') || msg.includes('ux') || msg.includes('design')) {
+                return `🎨 UI/UX Design Services:\n\nSanjai specializes in creating beautiful, user-friendly interfaces. Services include:\n\n• Modern responsive website design\n• Mobile app UI/UX design\n• User research & prototyping\n• Interactive user interfaces\n\nFeatured UI/UX project: CineMax - A movie ticket booking platform with intuitive design.`;
+            }
+
+            // AI / ML specific
+            if (msg.includes('ai') || msg.includes('artificial intelligence') || msg.includes('machine learning') || msg.includes('ml')) {
+                return `🤖 AI & Machine Learning:\n\nSanjai has expertise in:\n• AI Prompting & Chatbot development\n• Machine Learning model building\n• RAG (Retrieval-Augmented Generation)\n\nFeatured AI project: Indian Diet Planner AI - Uses RAG to recommend personalized Indian meals.`;
+            }
+
+            // Pricing / cost
+            if (msg.includes('price') || msg.includes('cost') || msg.includes('rate') || msg.includes('charge') || msg.includes('fee')) {
+                return `💬 For pricing and project discussions, please reach out directly:\n\n📧 Email: ${portfolioData.email}\n📱 Phone: ${portfolioData.phone}\n\nOr use the contact form on this page to send your requirements!`;
+            }
+
+            // Thanks
+            if (msg.includes('thank') || msg.includes('thanks')) {
+                return "You're welcome! 😊 Is there anything else you'd like to know about Sanjai's services or projects?";
+            }
+
+            // Bye
+            if (msg.includes('bye') || msg.includes('goodbye')) {
+                return "Goodbye! 👋 Feel free to reach out anytime. Have a great day!";
+            }
+
+            // Default response for unrelated questions
+            return `I can only help with questions about Sanjai's portfolio. Here's what I can assist with:\n\n• Services offered\n• Skills & expertise\n• Projects & work samples\n• Education & certifications\n• Contact information\n\nWhat would you like to know?`;
+        }
+
+        // Add message to chat
+        function addMessage(text, isUser) {
+            const messageDiv = document.createElement('div');
+            messageDiv.className = `chat-message ${isUser ? 'user' : 'bot'}`;
+            messageDiv.textContent = text;
+            chatMessages.appendChild(messageDiv);
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+        }
+
+        // Send message
+        function sendMessage() {
+            const message = chatInput.value.trim();
+            if (!message) return;
+
+            addMessage(message, true);
+            chatInput.value = '';
+
+            // Simulate typing delay
+            setTimeout(() => {
+                const response = getBotResponse(message);
+                addMessage(response, false);
+            }, 500);
+        }
+
+        // Handle Enter key
+        function handleChatKeypress(event) {
+            if (event.key === 'Enter') {
+                sendMessage();
+            }
+        }
+
+        // Handle suggestion click
+        function askSuggestion(question) {
+            chatInput.value = question;
+            sendMessage();
+        }
+
+        // ===== CONTACT FORM WITH EMAILJS =====
+        // EmailJS Configuration - Replace with your actual credentials
+        const EMAILJS_PUBLIC_KEY = 'YOUR_PUBLIC_KEY'; // Get from EmailJS dashboard
+        const EMAILJS_SERVICE_ID = 'YOUR_SERVICE_ID'; // Get from EmailJS dashboard
+        const EMAILJS_TEMPLATE_ID = 'YOUR_TEMPLATE_ID'; // Get from EmailJS dashboard
+
+        const contactForm = document.getElementById('contactForm');
+        const submitBtn = document.getElementById('submitBtn');
+        const formStatus = document.getElementById('formStatus');
+
+        contactForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+
+            const name = document.getElementById('userName').value.trim();
+            const email = document.getElementById('userEmail').value.trim();
+            const message = document.getElementById('userMessage').value.trim();
+
+            if (!name || !email || !message) {
+                showFormStatus('Please fill in all fields.', 'error');
+                return;
+            }
+
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'Sending...';
+
+            // Check if EmailJS is configured
+            if (EMAILJS_PUBLIC_KEY === 'YOUR_PUBLIC_KEY') {
+                // Fallback: Open email client with pre-filled content
+                const mailtoLink = `mailto:sanjai.rg2006@gmail.com?subject=Portfolio Contact from ${encodeURIComponent(name)}&body=${encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`)}`;
+                window.location.href = mailtoLink;
+
+                showFormStatus('Opening your email client... If it doesn\'t open, please email directly to sanjai.rg2006@gmail.com', 'success');
+                submitBtn.disabled = false;
+                submitBtn.textContent = 'Send Message';
+                contactForm.reset();
+                return;
+            }
+
+            try {
+                // EmailJS send (when configured)
+                await emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, {
+                    from_name: name,
+                    from_email: email,
+                    message: message,
+                    to_email: 'sanjai.rg2006@gmail.com'
+                });
+
+                showFormStatus('Message sent successfully! I\'ll get back to you soon.', 'success');
+                contactForm.reset();
+            } catch (error) {
+                showFormStatus('Failed to send message. Please try emailing directly.', 'error');
+                console.error('EmailJS Error:', error);
+            }
+
+            submitBtn.disabled = false;
+            submitBtn.textContent = 'Send Message';
+        });
+
+        function showFormStatus(message, type) {
+            formStatus.textContent = message;
+            formStatus.className = `form-status ${type}`;
+
+            setTimeout(() => {
+                formStatus.className = 'form-status';
+            }, 5000);
+        }
+    </script>
+</body>
+
+</html>
